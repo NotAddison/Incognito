@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:incognito/index.dart';
 
 // Main function to Run App
 void main() {
@@ -35,10 +36,11 @@ class _RootPageState extends State<RootPage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 39, 39, 39),
-          title: const Text("Incognito - Hide your identity."),
+          title: const Text("Incognito"),
         ),
+        body: const IndexPage(),
         floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.add),
+            child: const Icon(Icons.person_add),
             onPressed: () {
               print("Clicked");
               print(userCount);
