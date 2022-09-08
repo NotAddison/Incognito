@@ -12,7 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textTheme: const TextTheme(
+              headline1: TextStyle(color: Colors.white),
+              headline2: TextStyle(color: Colors.white),
+              bodyText2: TextStyle(color: Colors.white),
+              subtitle1: TextStyle(color: Colors.white))),
       home: const RootPage(),
     );
   }
@@ -36,29 +42,22 @@ class _RootPageState extends State<RootPage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 39, 39, 39),
-          title: const Text("Incognito"),
+          title: const Text("Incognito — Alt Identities"),
         ),
-        body: const IndexPage(),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.person_add),
-            onPressed: () {
-              print("Clicked");
-              print(userCount);
-              userCount++;
-            }),
-        bottomNavigationBar: NavigationBar(
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(
-                icon: Icon(Icons.settings), label: "Settings"),
-          ],
-          onDestinationSelected: (int index) {
-            setState(() {
-              currentPage = index;
-            });
-          },
-          selectedIndex: currentPage,
-        ),
+        body: IndexPage(),
+        // bottomNavigationBar: NavigationBar(
+        //   destinations: const [
+        //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+        //     NavigationDestination(
+        //         icon: Icon(Icons.settings), label: "Settings"),
+        //   ],
+        //   onDestinationSelected: (int index) {
+        //     setState(() {
+        //       currentPage = index;
+        //     });
+        //   },
+        //   selectedIndex: currentPage,
+        // ),
       ),
     );
   }
