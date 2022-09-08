@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:incognito/main.dart';
-import 'package:incognito/user.dart';
+import 'package:incognito/models/user.dart';
 
 class Details extends StatelessWidget {
   Account account;
@@ -462,7 +462,7 @@ class Details extends StatelessWidget {
                                     decoration: const InputDecoration(
                                         isDense: true,
                                         border: InputBorder.none),
-                                    initialValue: "${account.name}",
+                                    initialValue: "",
                                   )),
                                 ],
                               ),
