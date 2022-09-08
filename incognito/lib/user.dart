@@ -5,6 +5,8 @@ class Account {
   String? username;
   String? password;
   String? phone;
+  String? height;
+  String? weight;
 
   // Variables - Location
   String? country;
@@ -16,6 +18,7 @@ class Account {
   // Variables - Credit Card Information
   String? cardNumber;
   String? cardExp;
+  String? cardCvv;
 
   // Associated Webpages
   List<String> webpages = [];
