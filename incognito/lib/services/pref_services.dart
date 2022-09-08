@@ -4,18 +4,16 @@ import 'dart:convert';
 
 class PrefServices {
   void SaveAccounts(List<Account> list) async {
+    print("Loading Shared Preferences...");
     final SharedPreferences sharedpref = await SharedPreferences.getInstance();
-    var str = jsonEncode(list);
-    sharedpref.setString("Accounts", str);
+    var encoded_str = Account.encode(list);
+    sharedpref.setString("accounts", encoded_str);
   }
 
   Future<List<Account>> LoadAccounts() async {
+    // Fetch and decode data
     final SharedPreferences sharedpref = await SharedPreferences.getInstance();
-    var str = sharedpref.getString("Accounts");
-    if (str == null) {
-      return [];
-    }
-    var list = jsonDecode(str) as List;
-    return list.map((item) => Account.fromJson(item)).toList();
+    final String data = await sharedpref.getString("accounts") ?? "";
+    return Account.decode(data);
   }
 }
