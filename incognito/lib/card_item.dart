@@ -19,8 +19,7 @@ class MyCard extends StatelessWidget {
         child: ListTile(
           title: Text("${account.name}",
               style: const TextStyle(color: Colors.white)),
-          subtitle: Text(
-              "${account.name} | ${account.password} | ${account.ParseCreatedDate()}",
+          subtitle: Text("${account.username} | ${account.ParseCreatedDate()}",
               style: const TextStyle(color: Colors.white)),
           leading: const Icon(Icons.person, color: Colors.white, size: 50),
           trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
