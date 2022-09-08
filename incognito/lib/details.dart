@@ -115,6 +115,23 @@ class Details extends StatelessWidget {
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Phone Number:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.phone}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
                                     child: const Text("Username:",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
@@ -149,7 +166,7 @@ class Details extends StatelessWidget {
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(right: 15),
-                                    child: const Text("Phone Number:",
+                                    child: const Text("Height:",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -158,7 +175,24 @@ class Details extends StatelessWidget {
                                     decoration: const InputDecoration(
                                         isDense: true,
                                         border: InputBorder.none),
-                                    initialValue: "${account.phone}",
+                                    initialValue: "${account.height}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Weight:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.weight}",
                                   )),
                                 ],
                               ),
@@ -205,7 +239,7 @@ class Details extends StatelessWidget {
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(right: 15),
-                                    child: const Text("Name:",
+                                    child: const Text("Country:",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -214,7 +248,75 @@ class Details extends StatelessWidget {
                                     decoration: const InputDecoration(
                                         isDense: true,
                                         border: InputBorder.none),
-                                    initialValue: "${account.name}",
+                                    initialValue: "${account.country}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Street:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.street}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("City:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.city}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("State:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.state}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Zip:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.zip}",
                                   )),
                                 ],
                               ),
@@ -261,7 +363,7 @@ class Details extends StatelessWidget {
                                 children: [
                                   Container(
                                     margin: const EdgeInsets.only(right: 15),
-                                    child: const Text("Name:",
+                                    child: const Text("Card Number:",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -270,7 +372,41 @@ class Details extends StatelessWidget {
                                     decoration: const InputDecoration(
                                         isDense: true,
                                         border: InputBorder.none),
-                                    initialValue: "${account.name}",
+                                    initialValue: "${account.cardNumber}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Card Expiry:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.cardExp}",
+                                  )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 15),
+                                    child: const Text("Card CVV:",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                  Flexible(
+                                      child: TextFormField(
+                                    decoration: const InputDecoration(
+                                        isDense: true,
+                                        border: InputBorder.none),
+                                    initialValue: "${account.cardCvv}",
                                   )),
                                 ],
                               ),
@@ -307,7 +443,7 @@ class Details extends StatelessWidget {
                                             Icons.web_asset_outlined,
                                             color: Colors.white,
                                           )),
-                                      const Text("Associated Webpages:",
+                                      const Text("Notes:",
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18)),
@@ -315,12 +451,12 @@ class Details extends StatelessWidget {
                                   )),
                               Row(
                                 children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(right: 15),
-                                    child: const Text("Name:",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                  ),
+                                  // Container(
+                                  //   margin: const EdgeInsets.only(right: 15),
+                                  //   child: const Text("Name:",
+                                  //       style: TextStyle(
+                                  //           fontWeight: FontWeight.bold)),
+                                  // ),
                                   Flexible(
                                       child: TextFormField(
                                     decoration: const InputDecoration(
