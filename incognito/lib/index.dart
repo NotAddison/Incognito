@@ -69,7 +69,7 @@ class _IndexPageState extends State<IndexPage> {
     tempAcc.street = ru.results![0].location!.street!.name;
     tempAcc.city = ru.results![0].location!.city;
     tempAcc.state = ru.results![0].location!.state;
-    tempAcc.zip = ru.results![0].location!.postcode.toString();
+    tempAcc.zip = ru.results![0].location!.postcode;
 
     // Credit Card Information
     tempAcc.cardNumber = nf.plasticcard.toString();

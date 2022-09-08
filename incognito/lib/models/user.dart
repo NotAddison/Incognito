@@ -13,7 +13,7 @@ class Account {
   String? street;
   String? city;
   String? state;
-  String? zip;
+  int? zip;
 
   // Variables - Credit Card Information
   String? cardNumber;
