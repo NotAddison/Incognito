@@ -10,25 +10,25 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  var userList = [];
+  var accList = [];
 
   final index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 27, 27, 27),
+      backgroundColor: const Color.fromARGB(255, 27, 27, 27),
       body: ListView.builder(
-          itemCount: userList.length,
+          itemCount: accList.length,
           itemBuilder: (context, index) {
-            return MyCard(userList[index]);
+            return MyCard(accList[index]);
           }),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.person_add),
           onPressed: () {
             print("Clicked - Adding New User");
             setState(() {
-              userList.add(User("User ${userList.length + 1}"));
+              accList.add(Account("User ${accList.length + 1}"));
             });
           }),
     );

@@ -1,4 +1,4 @@
-class User {
+class Account {
   // Variables - Personal Information
   String? name;
   String? email; // [To-Do] - Add Temp Email API
@@ -26,5 +26,11 @@ class User {
   DateTime created = DateTime.now();
 
   // Parameterized Constructor
-  User(this.name);
+  Account(this.name);
+
+  // Object Functions
+  String ParseCreatedDate() {
+    DateTime date = created;
+    return "${date.day}/${date.month}/${date.year}";
+  }
 }

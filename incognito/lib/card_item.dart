@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:incognito/main.dart';
 import 'package:incognito/user.dart';
+import 'package:incognito/detials.dart';
 
 class MyCard extends StatelessWidget {
-  final User user;
-  MyCard(this.user);
+  final Account account;
+  MyCard(this.account);
   var index = 0;
 
   @override
@@ -16,23 +17,21 @@ class MyCard extends StatelessWidget {
         color: const Color.fromARGB(255, 41, 41, 41),
         margin: const EdgeInsets.all(5),
         child: ListTile(
-          title:
-              Text("${user.name}", style: const TextStyle(color: Colors.white)),
+          title: Text("${account.name}",
+              style: const TextStyle(color: Colors.white)),
           subtitle: Text(
-              "${user.username} | ${user.password} | ${FormatDate(user.created)}",
+              "${account.name} | ${account.password} | ${account.ParseCreatedDate()}",
               style: const TextStyle(color: Colors.white)),
           leading: const Icon(Icons.person, color: Colors.white, size: 50),
           trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
           contentPadding: const EdgeInsets.all(10),
           onTap: () {
-            print("${user.name} Clicked");
+            print("${account.name} Clicked");
+            Navigator.of(context, rootNavigator: true).push(
+                MaterialPageRoute(builder: (context) => Details(account)));
           },
         ),
       ),
     ));
-  }
-
-  String FormatDate(DateTime date) {
-    return "${date.day}/${date.month}/${date.year}";
   }
 }
