@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:incognito/main.dart';
-import 'package:incognito/user.dart';
+import 'package:incognito/models/user.dart';
 import 'package:incognito/details.dart';
 
 class MyCard extends StatelessWidget {
@@ -12,7 +12,7 @@ class MyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Card(
         color: const Color.fromARGB(255, 41, 41, 41),
         margin: const EdgeInsets.all(5),
