@@ -30,9 +30,20 @@ class _IndexPageState extends State<IndexPage> {
           child: const Icon(Icons.person_add),
           onPressed: () {
             print("Clicked - Adding New User");
+            BuildContext dialogContext;
+            // Loading Dialogue (User Feedback)
+            showDialog(
+                context: context,
+                builder: (context) {
+                  dialogContext = context;
+                  return Center(child: CircularProgressIndicator());
+                });
 
+            // Get Response from API
             GenerateAccount().then((value) => setState(() {
                   accList.add(value);
+                  // After appending data > Remove Loading Dialog
+                  Navigator.of(context, rootNavigator: true).pop(showDialog);
                 }));
           }),
     );
