@@ -11,12 +11,12 @@ String randomuserToJson(Randomuser data) => json.encode(data.toJson());
 
 class Randomuser {
   Randomuser({
-    required this.results,
-    required this.info,
+    this.results,
+    this.info,
   });
 
-  List<Result> results;
-  Info info;
+  List<Result>? results;
+  Info? info;
 
   factory Randomuser.fromJson(Map<String, dynamic> json) => Randomuser(
         results:
@@ -25,23 +25,23 @@ class Randomuser {
       );
 
   Map<String, dynamic> toJson() => {
-        "results": List<dynamic>.from(results.map((x) => x.toJson())),
-        "info": info.toJson(),
+        "results": List<dynamic>.from(results!.map((x) => x.toJson())),
+        "info": info!.toJson(),
       };
 }
 
 class Info {
   Info({
-    required this.seed,
-    required this.results,
-    required this.page,
-    required this.version,
+    this.seed,
+    this.results,
+    this.page,
+    this.version,
   });
 
-  String seed;
-  int results;
-  int page;
-  String version;
+  String? seed;
+  int? results;
+  int? page;
+  String? version;
 
   factory Info.fromJson(Map<String, dynamic> json) => Info(
         seed: json["seed"],
@@ -60,32 +60,32 @@ class Info {
 
 class Result {
   Result({
-    required this.gender,
-    required this.name,
-    required this.location,
-    required this.email,
-    required this.login,
-    required this.dob,
-    required this.registered,
-    required this.phone,
-    required this.cell,
-    required this.id,
-    required this.picture,
-    required this.nat,
+    this.gender,
+    this.name,
+    this.location,
+    this.email,
+    this.login,
+    this.dob,
+    this.registered,
+    this.phone,
+    this.cell,
+    this.id,
+    this.picture,
+    this.nat,
   });
 
-  String gender;
-  Name name;
-  Location location;
-  String email;
-  Login login;
-  Dob dob;
-  Dob registered;
-  String phone;
-  String cell;
-  Id id;
-  Picture picture;
-  String nat;
+  String? gender;
+  Name? name;
+  Location? location;
+  String? email;
+  Login? login;
+  Dob? dob;
+  Dob? registered;
+  String? phone;
+  String? cell;
+  Id? id;
+  Picture? picture;
+  String? nat;
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
         gender: json["gender"],
@@ -104,28 +104,28 @@ class Result {
 
   Map<String, dynamic> toJson() => {
         "gender": gender,
-        "name": name.toJson(),
-        "location": location.toJson(),
+        "name": name!.toJson(),
+        "location": location!.toJson(),
         "email": email,
-        "login": login.toJson(),
-        "dob": dob.toJson(),
-        "registered": registered.toJson(),
+        "login": login!.toJson(),
+        "dob": dob!.toJson(),
+        "registered": registered!.toJson(),
         "phone": phone,
         "cell": cell,
-        "id": id.toJson(),
-        "picture": picture.toJson(),
+        "id": id!.toJson(),
+        "picture": picture!.toJson(),
         "nat": nat,
       };
 }
 
 class Dob {
   Dob({
-    required this.date,
-    required this.age,
+    this.date,
+    this.age,
   });
 
-  DateTime date;
-  int age;
+  DateTime? date;
+  int? age;
 
   factory Dob.fromJson(Map<String, dynamic> json) => Dob(
         date: DateTime.parse(json["date"]),
@@ -133,19 +133,19 @@ class Dob {
       );
 
   Map<String, dynamic> toJson() => {
-        "date": date.toIso8601String(),
+        "date": date!.toIso8601String(),
         "age": age,
       };
 }
 
 class Id {
   Id({
-    required this.name,
-    required this.value,
+    this.name,
+    this.value,
   });
 
-  String name;
-  String value;
+  String? name;
+  String? value;
 
   factory Id.fromJson(Map<String, dynamic> json) => Id(
         name: json["name"],
@@ -160,22 +160,22 @@ class Id {
 
 class Location {
   Location({
-    required this.street,
-    required this.city,
-    required this.state,
-    required this.country,
-    required this.postcode,
-    required this.coordinates,
-    required this.timezone,
+    this.street,
+    this.city,
+    this.state,
+    this.country,
+    this.postcode,
+    this.coordinates,
+    this.timezone,
   });
 
-  Street street;
-  String city;
-  String state;
-  String country;
-  int postcode;
-  Coordinates coordinates;
-  Timezone timezone;
+  Street? street;
+  String? city;
+  String? state;
+  String? country;
+  int? postcode;
+  Coordinates? coordinates;
+  Timezone? timezone;
 
   factory Location.fromJson(Map<String, dynamic> json) => Location(
         street: Street.fromJson(json["street"]),
@@ -188,24 +188,24 @@ class Location {
       );
 
   Map<String, dynamic> toJson() => {
-        "street": street.toJson(),
+        "street": street!.toJson(),
         "city": city,
         "state": state,
         "country": country,
         "postcode": postcode,
-        "coordinates": coordinates.toJson(),
-        "timezone": timezone.toJson(),
+        "coordinates": coordinates!.toJson(),
+        "timezone": timezone!.toJson(),
       };
 }
 
 class Coordinates {
   Coordinates({
-    required this.latitude,
-    required this.longitude,
+    this.latitude,
+    this.longitude,
   });
 
-  String latitude;
-  String longitude;
+  String? latitude;
+  String? longitude;
 
   factory Coordinates.fromJson(Map<String, dynamic> json) => Coordinates(
         latitude: json["latitude"],
@@ -220,12 +220,12 @@ class Coordinates {
 
 class Street {
   Street({
-    required this.number,
-    required this.name,
+    this.number,
+    this.name,
   });
 
-  int number;
-  String name;
+  int? number;
+  String? name;
 
   factory Street.fromJson(Map<String, dynamic> json) => Street(
         number: json["number"],
@@ -240,12 +240,12 @@ class Street {
 
 class Timezone {
   Timezone({
-    required this.offset,
-    required this.description,
+    this.offset,
+    this.description,
   });
 
-  String offset;
-  String description;
+  String? offset;
+  String? description;
 
   factory Timezone.fromJson(Map<String, dynamic> json) => Timezone(
         offset: json["offset"],
@@ -260,22 +260,22 @@ class Timezone {
 
 class Login {
   Login({
-    required this.uuid,
-    required this.username,
-    required this.password,
-    required this.salt,
-    required this.md5,
-    required this.sha1,
-    required this.sha256,
+    this.uuid,
+    this.username,
+    this.password,
+    this.salt,
+    this.md5,
+    this.sha1,
+    this.sha256,
   });
 
-  String uuid;
-  String username;
-  String password;
-  String salt;
-  String md5;
-  String sha1;
-  String sha256;
+  String? uuid;
+  String? username;
+  String? password;
+  String? salt;
+  String? md5;
+  String? sha1;
+  String? sha256;
 
   factory Login.fromJson(Map<String, dynamic> json) => Login(
         uuid: json["uuid"],
@@ -300,14 +300,14 @@ class Login {
 
 class Name {
   Name({
-    required this.title,
-    required this.first,
-    required this.last,
+    this.title,
+    this.first,
+    this.last,
   });
 
-  String title;
-  String first;
-  String last;
+  String? title;
+  String? first;
+  String? last;
 
   factory Name.fromJson(Map<String, dynamic> json) => Name(
         title: json["title"],
@@ -324,14 +324,14 @@ class Name {
 
 class Picture {
   Picture({
-    required this.large,
-    required this.medium,
-    required this.thumbnail,
+    this.large,
+    this.medium,
+    this.thumbnail,
   });
 
-  String large;
-  String medium;
-  String thumbnail;
+  String? large;
+  String? medium;
+  String? thumbnail;
 
   factory Picture.fromJson(Map<String, dynamic> json) => Picture(
         large: json["large"],

@@ -10,74 +10,74 @@ String namefakeToJson(Namefake data) => json.encode(data.toJson());
 
 class Namefake {
   Namefake({
-    required this.name,
-    required this.address,
-    required this.latitude,
-    required this.longitude,
-    required this.maidenName,
-    required this.birthData,
-    required this.phoneH,
-    required this.phoneW,
-    required this.emailU,
-    required this.emailD,
-    required this.username,
-    required this.password,
-    required this.domain,
-    required this.useragent,
-    required this.ipv4,
-    required this.macaddress,
-    required this.plasticcard,
-    required this.cardexpir,
-    required this.bonus,
-    required this.company,
-    required this.color,
-    required this.uuid,
-    required this.height,
-    required this.weight,
-    required this.blood,
-    required this.eye,
-    required this.hair,
-    required this.pict,
-    required this.url,
-    required this.sport,
-    required this.ipv4Url,
-    required this.emailUrl,
-    required this.domainUrl,
+    this.name,
+    this.address,
+    this.latitude,
+    this.longitude,
+    this.maidenName,
+    this.birthData,
+    this.phoneH,
+    this.phoneW,
+    this.emailU,
+    this.emailD,
+    this.username,
+    this.password,
+    this.domain,
+    this.useragent,
+    this.ipv4,
+    this.macaddress,
+    this.plasticcard,
+    this.cardexpir,
+    this.bonus,
+    this.company,
+    this.color,
+    this.uuid,
+    this.height,
+    this.weight,
+    this.blood,
+    this.eye,
+    this.hair,
+    this.pict,
+    this.url,
+    this.sport,
+    this.ipv4Url,
+    this.emailUrl,
+    this.domainUrl,
   });
 
-  String name;
-  String address;
-  double latitude;
-  double longitude;
-  String maidenName;
-  DateTime birthData;
-  String phoneH;
-  String phoneW;
-  String emailU;
-  String emailD;
-  String username;
-  String password;
-  String domain;
-  String useragent;
-  String ipv4;
-  String macaddress;
-  String plasticcard;
-  String cardexpir;
-  int bonus;
-  String company;
-  String color;
-  String uuid;
-  int height;
-  double weight;
-  String blood;
-  String eye;
-  String hair;
-  String pict;
-  String url;
-  String sport;
-  String ipv4Url;
-  String emailUrl;
-  String domainUrl;
+  String? name;
+  String? address;
+  double? latitude;
+  double? longitude;
+  String? maidenName;
+  DateTime? birthData;
+  String? phoneH;
+  String? phoneW;
+  String? emailU;
+  String? emailD;
+  String? username;
+  String? password;
+  String? domain;
+  String? useragent;
+  String? ipv4;
+  String? macaddress;
+  String? plasticcard;
+  String? cardexpir;
+  int? bonus;
+  String? company;
+  String? color;
+  String? uuid;
+  int? height;
+  double? weight;
+  String? blood;
+  String? eye;
+  String? hair;
+  String? pict;
+  String? url;
+  String? sport;
+  String? ipv4Url;
+  String? emailUrl;
+  String? domainUrl;
 
   factory Namefake.fromJson(Map<String, dynamic> json) => Namefake(
         name: json["name"],
@@ -121,8 +121,7 @@ class Namefake {
         "latitude": latitude,
         "longitude": longitude,
         "maiden_name": maidenName,
-        "birth_data":
-            "${birthData.year.toString().padLeft(4, '0')}-${birthData.month.toString().padLeft(2, '0')}-${birthData.day.toString().padLeft(2, '0')}",
+        "birth_data": birthData!.toIso8601String(),
         "phone_h": phoneH,
         "phone_w": phoneW,
         "email_u": emailU,
