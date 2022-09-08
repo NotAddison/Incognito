@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class Account {
   // Variables - Personal Information
   String? name;
@@ -13,7 +15,7 @@ class Account {
   String? street;
   String? city;
   String? state;
-  int? zip;
+  String? zip;
 
   // Variables - Credit Card Information
   String? cardNumber;
@@ -55,4 +57,35 @@ class Account {
     temp.created = DateTime.parse(jsonData['created']);
     return temp;
   }
+
+  static Map<String, dynamic> toMap(Account account) => {
+        'name': account.name,
+        'email': account.email,
+        'username': account.username,
+        'password': account.password,
+        'phone': account.phone,
+        'height': account.height,
+        'weight': account.weight,
+        'country': account.country,
+        'street': account.street,
+        'city': account.city,
+        'state': account.state,
+        'zip': account.zip,
+        'cardNumber': account.cardNumber,
+        'cardExp': account.cardExp,
+        'cardCvv': account.cardCvv,
+        'webpages': account.webpages,
+        'created': account.created.toIso8601String(),
+      };
+
+  static String encode(List<Account> account) => json.encode(
+        account
+            .map<Map<String, dynamic>>((account) => Account.toMap(account))
+            .toList(),
+      );
+
+  static List<Account> decode(String account) =>
+      (json.decode(account) as List<dynamic>)
+          .map<Account>((item) => Account.fromJson(item))
+          .toList();
 }

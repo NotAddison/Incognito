@@ -5,6 +5,8 @@ import 'package:incognito/models/randomuser_api.dart';
 import 'package:incognito/models/user.dart';
 import 'package:incognito/services/cvv_gen.dart';
 import 'package:incognito/services/remote_services.dart';
+import 'package:incognito/services/pref_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
@@ -69,7 +71,7 @@ class _IndexPageState extends State<IndexPage> {
     tempAcc.street = ru.results![0].location!.street!.name;
     tempAcc.city = ru.results![0].location!.city;
     tempAcc.state = ru.results![0].location!.state;
-    tempAcc.zip = ru.results![0].location!.postcode;
+    tempAcc.zip = ru.results![0].location!.postcode.toString();
 
     // Credit Card Information
     tempAcc.cardNumber = nf.plasticcard.toString();
@@ -78,7 +80,6 @@ class _IndexPageState extends State<IndexPage> {
 
     // Notes / Associated Websites
     tempAcc.webpages = [];
-
     return tempAcc;
   }
 }
