@@ -11,6 +11,14 @@ It generates a name, address, phone number, email, and even fake credit card inf
 Simply click a button and a new identity is generated for you to be used at your disposal. 
 <br>
 
+## To-Do
+- [ ] Shared Preferences (Save & Load identities)
+- [ ] Update an Account
+- [ ] Delete an Account
+- [ ] Find a more reliable API :skull:
+- [ ] Revamp UI
+- [ ] More Features (??)
+
 ## Preview
 Index                      |  Details                  |  Details (2)
   :-------------------------:|:-------------------------:|:-------------------------:
