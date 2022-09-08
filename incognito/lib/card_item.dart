@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:incognito/main.dart';
 import 'package:incognito/user.dart';
-import 'package:incognito/detials.dart';
+import 'package:incognito/details.dart';
 
 class MyCard extends StatelessWidget {
   final Account account;
