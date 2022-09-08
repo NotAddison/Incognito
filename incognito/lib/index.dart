@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:incognito/card_item.dart';
-import 'package:incognito/user.dart';
+import 'package:incognito/models/user.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
