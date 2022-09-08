@@ -5,19 +5,17 @@ class Account {
   String? username;
   String? password;
   String? phone;
-  String? address;
+
+  // Variables - Location
+  String? country;
+  String? street;
   String? city;
   String? state;
   String? zip;
-  String? country;
 
   // Variables - Credit Card Information
   String? cardNumber;
-  String? cardName;
   String? cardExp;
-  String? cardCvv;
-  String? cardType;
-  String? cardPin;
 
   // Associated Webpages
   List<String> webpages = [];
