@@ -20,6 +20,7 @@ class RemoteService {
       final randomuser = randomuserFromJson(response.body);
       return randomuser;
     } else {
+      print(response.statusCode);
       throw Exception('Failed to load data');
     }
   }

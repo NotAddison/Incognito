@@ -173,7 +173,7 @@ class Location {
   String? city;
   String? state;
   String? country;
-  int? postcode;
+  var postcode;
   Coordinates? coordinates;
   Timezone? timezone;
 
